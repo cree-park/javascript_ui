@@ -5,7 +5,7 @@ const tabContent = tabSelect.querySelectorAll('.tab-pannel');
 
 function setSelectItem(e) {
     let clickedList = e.target.parentNode;
-    let clickedIndex = e.target.parentNode.getAttribute('data-tab');
+    let clickedIndex = e.target.getAttribute('data-tab');
 
     for (var i = 0; i < tabItems.length; i++) {
         tabItems[i].classList.remove('active');

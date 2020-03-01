@@ -5,25 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>탭메뉴</title>
+    <style>
+        .active{display: block;}
+        .tab-pannel{display: none;}
+        .tab-pannel.active{display: block;}
+    </style>
 </head>
 <body>
     <section>
         <ul class="tab-list-wrap">
-            <li class="active" data-tab="js-tab1">
-                메뉴1
-            </li>
-            <li data-tab="js-tab2">
-                메뉴2
-            </li>
+            <li><a href="javascript:;" class="active" data-tab="js-tab1">메뉴1</a></li>
+            <li><a href="javascript:;" data-tab="js-tab2">메뉴2</a></li>
         </ul>
-    
+
         <div class="tab-cnt-wrap">
-            <div id="js-tab1" class="tab-pannel">
-                콘텐츠1
-            </div>
-            <div id="js-tab2" class="tab-pannel">
-                콘텐츠2
-            </div>
+            <div id="js-tab1" class="tab-pannel active">콘텐츠1</div>
+            <div id="js-tab2" class="tab-pannel">콘텐츠2</div>
         </div>
     </section>
     
