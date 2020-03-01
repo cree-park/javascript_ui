@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>탭메뉴</title>
+    <style>
+        .faq-wrap .active > div{display: block;}
+        .faq-wrap li > div{display: none;}
+    </style>
+</head>
+<body>
+    <section>
+        <ul class="faq-wrap">
+            <li class="active">
+                <button>질문1</button>
+                <div>답변1</div>
+            </li>
+            <li>
+                <button>질문2</button>
+                <div>답변2</div>
+            </li>
+            <li>
+                <button>질문3</button>
+                <div>답변3</div>
+            </li>
+        </ul>
+    </section>
+    
+    <script src="accordion.js"></script>
+</body>
+</html>
