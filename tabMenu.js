@@ -1,10 +1,10 @@
 const tabMenu = document.querySelector('.tab-list-wrap');
-const tabItems = tabMenu.querySelectorAll('li');
+const tabItems = tabMenu.querySelectorAll('li a');
 const tabSelect = document.querySelector('.tab-cnt-wrap');
 const tabContent = tabSelect.querySelectorAll('.tab-pannel');
 
 function setSelectItem(e) {
-    let clickedList = e.target.parentNode;
+    let clickedList = e.target;
     let clickedIndex = e.target.getAttribute('data-tab');
 
     for (var i = 0; i < tabItems.length; i++) {
