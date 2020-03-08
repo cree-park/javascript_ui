@@ -7,24 +7,24 @@ function setSelectItem(e) {
     let clickedList = e.target;
     let clickedIndex = e.target.getAttribute('data-tab');
 
-    for (var i = 0; i < tabItems.length; i++) {
-        tabItems[i].classList.remove('active');
-    }
-    for (var j = 0; j < tabContent.length; j++) {
-        tabContent[j].classList.remove('active');
-    }
+    tabItems.forEach(function(elem) {
+        elem.classList.remove('active');
+    });
+
+    tabContent.forEach(function(elem) {
+        elem.classList.remove('active');
+    });
     
     clickedList.classList.add('active');
     document.getElementById(clickedIndex).classList.add('active');
 }
 
 function tabEvent() {
-    for(var i = 0; i < tabItems.length; i++) {
-        tabItems[i].addEventListener('click', function(e) {
-            e.preventDefault;
+    tabItems.forEach(function(elem) {
+        elem.addEventListener('click', function(e) {
             setSelectItem(e);
         });
-    }
+    });
 }
 
 function init() {
