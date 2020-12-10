@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>back to top</title>
+    <style>
+        * {margin: 0;padding: 0;box-sizing: border-box;}
+        
+        header {height: 60px;background: #222;}
+        main {height: 5250px;background: #555;}
+        section {height: 1750px;border: 1px solid #fff;font-size: 30px;text-align: center;}
+        footer {height: 120px;background: #888;}
+
+        .back-to-top {position: fixed;right: 30px;bottom: 30px;width: 60px;height: 60px;background: coral;opacity: 0;transition: .3s ease-in-out;}
+        .back-to-top span {display: block;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -20%) rotate(45deg);width: 30px;height: 30px;border-left: 2px solid #fff;border-top: 2px solid #fff;font-size: 0;}
+        .back-to-top.active {opacity: 1;}
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <main>
+        <section>section1</section>
+        <section class="section2">section2</section>
+        <section class="section3">section3</section>
+    </main>
+
+    <footer>
+        <a href="javascript:;" class="back-to-top">
+            <span>상단으로</span>
+        </a>
+    </footer>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="jquery.js"></script>
+</body>
+</html>
