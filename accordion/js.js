@@ -1,23 +1,25 @@
-const accoMenu = document.querySelector('.faq-wrap');
-const accoItems = accoMenu.querySelectorAll('li > button');
-const accoContent = accoMenu.querySelectorAll('li > div');
+'use strict';
 
-function setSelectItem(e) {
+let accoMenu = document.querySelector('.accodion');
+let accoItems = accoMenu.querySelectorAll('.pannel-head');
+let accoContent = accoMenu.querySelectorAll('.pannel-content');
+
+let accoEvent = () => {
+    accoItems.forEach(elem => {
+        elem.addEventListener('click', (e) => {
+            setSelectItem(e);
+        });
+    });
+}
+
+let setSelectItem = (e) => {
     let clickedIndex = e.target.parentNode;
 
-    accoItems.forEach((elem) => {
+    accoItems.forEach(elem => {
         elem.parentNode.classList.remove('active');
     });
 
     clickedIndex.classList.add('active');
-}
-
-function accoEvent() {
-    accoItems.forEach((elem) => {
-        elem.addEventListener('click', function(e) {
-            setSelectItem(e);
-        });
-    });
 }
 
 accoEvent();
