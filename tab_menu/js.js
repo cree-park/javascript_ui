@@ -1,34 +1,32 @@
-const tabMenu = document.querySelector('.tab-list-wrap');
-const tabItems = tabMenu.querySelectorAll('li a');
-const tabSelect = document.querySelector('.tab-cnt-wrap');
-const tabContent = tabSelect.querySelectorAll('.tab-pannel');
+'use strict';
 
-function setSelectItem(e) {
-    let clickedList = e.target;
-    let clickedIndex = e.target.getAttribute('data-tab');
+let tabMenu = document.querySelector('.tab-menu');
+let tabBtn = tabMenu.querySelectorAll('li a');
+let tabCont = document.querySelectorAll('.tab-pannel');
 
-    tabItems.forEach(function(elem) {
+tabBtn.forEach(elem => {
+    elem.addEventListener('click', (e) => {
+        setSelectItem(e);
+        viewSelectItem(e);
+    });
+});
+
+let setSelectItem = (e) => {
+    let clickedIndex = e.target;
+ 
+    tabBtn.forEach(elem => {
         elem.classList.remove('active');
     });
 
-    tabContent.forEach(function(elem) {
+    clickedIndex.classList.add('active');
+}
+
+let viewSelectItem = (e) => {
+    let tabBtnData = e.target.dataset.tab;
+
+    tabCont.forEach(elem => {
         elem.classList.remove('active');
     });
-    
-    clickedList.classList.add('active');
-    document.getElementById(clickedIndex).classList.add('active');
-}
 
-function tabEvent() {
-    tabItems.forEach(function(elem) {
-        elem.addEventListener('click', function(e) {
-            setSelectItem(e);
-        });
-    });
+    document.querySelector(`.${tabBtnData}`).classList.add('active');
 }
-
-function init() {
-    tabEvent();
-}
-
-init();
