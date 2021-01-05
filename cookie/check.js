@@ -1,12 +1,12 @@
 'use strict';
 
-let date = new Date();
-date.setDate(date.getDate() + 7);
+let currentCookie = document.cookie;
+let cookieCheck = document.cookie.indexOf('ABC');
 
-let setCookie = '';
-setCookie += 'CookieName = ABC;';
-setCookie += 'expires = ' + date.toUTCString();
+console.log(cookieCheck);
 
-document.cookie = setCookie;
-
-console.log(document.cookie);
+if (cookieCheck > -1) {
+    document.querySelector('.notice').style.display = 'none';
+} else {
+    document.querySelector('.notice').style.display = 'block';
+}
